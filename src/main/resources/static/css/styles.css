@@ -1,0 +1,201 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Light theme variables */
+:root {
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --card-background-color: #ffffff;
+    --accent-color: #3b82f6;
+    --accent-color-hover: #2563eb;
+    --border-color: #e5e7eb;
+}
+
+/* Dark theme variables */
+html.dark-mode {
+    --background-color: #1a202c;
+    --text-color: #e2e8f0;
+    --card-background-color: #2d3748;
+    --accent-color: #60a5fa;
+    --accent-color-hover: #3b82f6;
+    --border-color: #4a5568;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: var(--card-background-color);
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+}
+
+:root {
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --card-background-color: #ffffff;
+    --accent-color: #3b82f6;
+    --accent-color-hover: #2563eb;
+    --border-color: #e5e7eb;
+    --accent-color-yellow: #f59e0b;
+}
+
+/* Dark theme variables */
+html.dark-mode {
+    --background-color: #1a202c;
+    --text-color: #e2e8f0;
+    --card-background-color: #2d3748;
+    --accent-color: #60a5fa;
+    --accent-color-hover: #3b82f6;
+    --border-color: #4a5568;
+    --accent-color-yellow: #fcd34d;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-color-yellow);
+    color: #333;
+}
+
+nav ul li a.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+#theme-switcher {
+    margin-left: 1rem;
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--card-background-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input, select, button {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 300px;
+}
+
+form span {
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--accent-color-hover);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-radius: 1rem;
+    }
+
+    nav ul li a {
+        border-radius: 0.5rem;
+    }
+}
+#theme-switcher .sun {
+    display: block;
+}
+#theme-switcher .moon {
+    display: none;
+}
+
+html.dark-mode #theme-switcher .sun {
+    display: none;
+}
+html.dark-mode #theme-switcher .moon {
+    display: block;
+}
+
+/* Result container styles */
+.result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-background-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    color: var(--text-color);
+}
+
+.result-container p {
+    margin: 0;
+    font-size: 1.25rem;
+}
