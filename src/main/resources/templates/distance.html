@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+<main>
+    <h1>Unit Converter</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/unit-converter/distance}" th:classappend="${activePage == 'distance'} ? 'active' : ''">Distance</a></li>
+            <li><a th:href="@{/unit-converter/weight}" th:classappend="${activePage == 'weight'} ? 'active' : ''">Weight</a></li>
+            <li><a th:href="@{/unit-converter/temperature}"  th:classappend="${activePage == 'temperature'} ? 'active' : ''">Temperature</a></li>
+        </ul>
+        <button id="theme-switcher">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </nav>
+    <form action="/unit-converter/distance/submit" method="post">
+        <input type="number" name="value" placeholder="Enter value" step="any">
+        <select name="from">
+            <option th:each="distance: ${distances}" th:value="${distance.name()}"
+                    th:text="${distance.getText()}"></option>
+        </select>
+        <span>to</span>
+        <select name="to">
+            <option th:each="distance: ${distances}" th:value="${distance.name()}"
+                    th:text="${distance.getText()}"></option>
+        </select>
+        <button type="submit">Convert</button>
+    </form>
+    <div th:if="${result != null}" class="result-container">
+        <p>Result: <span th:text="${result}"></span></p>
+    </div>
+</main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
